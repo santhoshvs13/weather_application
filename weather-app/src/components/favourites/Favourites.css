@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Full-page container */
+.favorites-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Ensure full page coverage */
+}
+
+/* Form row layout */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-row input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.form-row button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 30%;
+}
+
+.form-row button:hover {
+  background-color: rgb(55, 55, 226);
+  transform: scale(1.05);
+}
+
+.form-row button:active {
+  transform: scale(0.98);
+}
+
+/* Table responsiveness and styling */
+.table-responsive {
+  overflow-x: auto;
+  flex-grow: 1; /* Allow table to grow and fill remaining space */
+  margin-top: 20px;
+}
+
+.favorites-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.favorites-table th, .favorites-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.favorites-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.favorites-table td {
+  font-size: 2rem;
+  color: #333;
+  text-align: center; /* Center the icons and buttons */
+
+}
+
+/* Weather icon styling */
+.icon {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Trend button styling */
+.trend-button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  vertical-align: middle; /* Aligns with icon */
+}
+
+.trend-button:hover {
+  background-color: #45a049;
+}
+
+.trend-button:active {
+  background-color: #3d9143;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .form-row {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .form-row input, .form-row button {
+      width: 100%;
+  }
+
+  .favorites-container {
+      padding: 20px;
+  }
+
+  .favorites-table th, .favorites-table td {
+      padding: 10px;
+  }
+
+  .favorites-table td {
+      font-size: 0.9rem;
+  }
+}
+
+.weather-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-image img {
+  width: 80px;
+  height: 80px;
+}
+
+.popup-temp {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.popup-humidity,
+.popup-wind,
+.popup-coords {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.custom-sweetalert-popup {
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Modal-specific styles */
+/* .modal {
+  z-index: 1050; /* Ensures modal is above the DataTable */
+  /* position: absolute;
+} */ */
+
+/* Increase z-index of DataTable overlay to avoid conflict */
+.react-data-table {
+  z-index: 1030; /* Ensure DataTable header has lower z-index than modal */
+}
+
+/* Darker background for modal overlay */
+.react-data-table-overlay {
+  z-index: 1040;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+
+/* Ensure the modal has a higher z-index than the table */
+.ReactModal__Overlay {
+  z-index: 999; /* High z-index for the modal */
+}
+
+.ReactModal__Content {
+  position: absolute;
+  top: 50%;   /* Center vertically */
+  left: 50%;  /* Center horizontally */
+  transform: translate(0%, -5%); /* Offset to center the modal */
+  max-width: 80%;  /* Limit the modal's width */
+  max-height: 80%; /* Limit the modal's height */
+  overflow: auto;  /* Enable scrolling if content overflows */
+  background-color: white; /* Ensure modal content is visible */
+  border-radius: 8px; /* Optional: Add some border radius for aesthetics */
+  padding: 20px; /* Optional: Add padding for inner content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better appearance */
+  z-index: 1000; /* Make sure it's above everything else */
+}
+
